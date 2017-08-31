@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-webapp-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, height=device-height,
+initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
+    <title>Location</title>
+    <link rel="stylesheet" href="iphone.css">
+</head>
+<body onload="getGPSLatLng()">
+<header class="secondary"> Sign Up! </header>
+<button class="back" onclick="location.href='index.html';">Back</button>
+<button class="location" id="get_coords" onClick="watchGPS()">Get GPS
+    Coordinates</button>
+<div id="geolocate">
+    <input id="address" type="text" placeholder="Enter an address here">
+    <button class="location" id="geo"
+            onclick="displayMapByAddress()">Geolocate</button>
+</div>
+<div id="basic_map" style="width:320px;height:240px;"></div>
+<div id="gps_coords">
+    <h1>GPS coordinates below </h1>
+</div>
+<script>
+    var updateLocation;
+    var lat;
+    var lon;
+
+    /*This function uses the geolocation.getCurrentPosition method.
+The geolocation.getCurrentPosition takes 3 parameters:
+a success function,
+an error function,
+and options in the form of JSON syntax.
+This function is invoked when the user click on the get_coords button.
+*/
+    function getGPS()
+    {
+    navigator.geolocation.getCurrentPosition(successGPS,errorGPS,{enableHighAccuracy:true});
+    }
+    function successGPS(position)
+    {
+//store the location latitude and longtitude info
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        var div = document.getElementById("gps_coords");
+        var par = document.createElement("p");
+        var textString = "Note: Needs API key to render map. lat="+lat+", lon="+lon+"<br>";
+        par.innerHTML= textString;
+        div.appendChild(par);
+    }
+    function errorGPS() {
+        alert("GPS error");
+    }
+
+    function watchGPS() {
+        updateLocation=navigator.geolocation.getCurrentPosition(successGPS,errorGPS,{enableHighAccuracy:true})
+    }
+
+    function getGPSLatLng() {
+        navigator.geolocation.getCurrentPosition(successGPSLatLng,errorGPS,{enableHighAccuracy:true});
+    }
+
+    function successGPSLatLng(position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        var latlng = new google.maps.LatLng(lat,lon);
+        var myOptions = {
+            zoom : 15,
+            center: latlng,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+
+        var map = new google.maps.Map(document.getElementById("basic_map"),myOptions);
+        var marker =  new google.maps.Marker({position: latlng, map: map});
+    }
+
+    function initializeByAddress(location) {
+        var myOptions = {
+            zoom : 15,
+            center: location,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+
+        var map = new google.maps.Map(document.getElementById("basic_map"),myOptions);
+        var marker =  new google.maps.Marker({position: location, map: map});
+
+
+    }
+
+    function displayMapByAddress() {
+        var address = document.getElementById("address");
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address': address.value}, function(results,status) {
+            initializeByAddress(results[0].geometry.location);
+        });
+
+    }
+
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+        type="text/javascript"></script>
+</body>
+</html>
