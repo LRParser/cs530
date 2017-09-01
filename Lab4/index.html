@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="drexel.css" />
+    <link rel="stylesheet" href="jquery.mobile.icons.min.css" />
+</head>
+<body>
+<div id="welcome" data-role="page">
+    <div data-role="header">
+        <h1>Welcome to Bike Drexel</h1>
+    </div><!-- /header -->
+    <div data-role="content">
+        <p>
+            <a href="#stores">Bike Stores</a>
+        </p>
+        <p>
+            <a href="#register">Register</a>
+        </p>
+        <p>
+            <a href="#ride">Go For a Ride</a>
+        </p>
+        <p>
+            <a href="#popupBasic" data-role="button" data-rel="popup">Open Popup</a>
+        </p>
+        <p>
+            <a href="#popupInfo" data-role="button" data-rel="popup">Tooltip Popup</a>
+        </p>
+        <p>
+            <a href="#popupLogin" data-role="button" data-rel="popup">Login Popup</a>
+        </p>
+        <p>
+            <a href="#popupPhoto" data-role="button" data-rel="popup">Photo Popup</a>
+        </p>
+
+
+
+        <div data-role="popup" id="popupBasic">
+            <p>This is a completely basic popup</p>
+        </div>
+
+        <div data-role="popup" id="popupInfo">Tooltip</div>
+        <div data-role="popup" id="popupLogin">
+            <form>
+                <h3>Please sign in</h3>
+                <label for="un">Username: </label>
+                <input id="un" placeholder="username" />
+                <label for="pw">Username: </label>
+                <input id="pw" type="password" placeholder="password" />
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div data-role="popup" id="popupPhoto">
+            <img class="popphoto" src="bikes.jpg.png" alt="Students riding" data-theme="c">
+        </div>
+
+    </div><!-- /content -->
+    <div data-role="footer" data-theme="c">
+        <h4>CS530: Developing User Interfaces &copy; 2017</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+<div id="stores" data-role="page">
+    <div data-role="header">
+        <h1>Bike Stores</h1>
+        <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+        <a data-icon="home" href="#welcome">Home</a>
+    </div><!-- /header -->
+    <div data-role="content">
+        <p>
+            <a href="#stores">Bike Stores</a>
+        </p>
+        <p>
+            <a href="#register">Register</a>
+        </p>
+        <p>
+            <a href="#ride">Go For a Ride</a>
+        </p>
+    </div><!-- /content -->
+    <div data-role="footer">
+        <h4>CS530: Developing User Interfaces &copy; 2017</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+<div id="register" data-role="page">
+    <div data-role="header">
+        <h1>Register</h1>
+        <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+        <a data-icon="home" href="#welcome">Home</a>
+
+    </div><!-- /header -->
+    <div data-role="content">
+        <p>
+            <a href="#stores">Bike Stores</a>
+        </p>
+        <p>
+            <a href="#register">Register</a>
+        </p>
+        <p>
+            <a href="#ride">Go For a Ride</a>
+        </p>
+        <p>Go Home
+            <a data-icon="home" href="#welcome">Home</a>
+        </p>
+    </div><!-- /content -->
+    <div data-role="footer">
+        <h4>CS530: Developing User Interfaces &copy; 2017</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+<div id="ride" data-role="page">
+    <div data-role="header">
+        <h1>Go For a Ride</h1>
+        <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+        <a data-icon="home" href="#welcome">Home</a>
+
+    </div><!-- /header -->
+    <div data-role="content">
+        <p>
+            <a href="#stores">Bike Stores</a>
+        </p>
+        <p>
+            <a href="#register">Register</a>
+        </p>
+        <p>
+            <a href="#ride">Go For a Ride</a>
+        </p>
+    </div><!-- /content -->
+    <div data-role="footer">
+        <h4>CS530: Developing User Interfaces &copy; 2017</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+</body>
+</html>
