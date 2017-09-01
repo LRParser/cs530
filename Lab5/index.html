@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="jquery.mobile.icons.min.css" />
 </head>
 <body>
+
 <div id="welcome" data-role="page">
     <div data-role="header">
         <h1>Welcome to Bike Drexel</h1>
     </div><!-- /header -->
     <div data-role="content">
+
         <p>
             <a href="#stores">Bike Stores</a>
         </p>
@@ -37,6 +39,21 @@
             <a href="#popupPhoto" data-role="button" data-rel="popup">Photo Popup</a>
         </p>
 
+        <ul data-role="listview" data-inset="true" style="padding-bottom: 25px;">
+            <li><a href="#bicycles">Bicycles</a></li>
+            <li><a href="">Link 2</a></li>
+            <li><a href="">Link 3</a></li>
+            <li><a href="">Link 4</a></li>
+        </ul>
+
+        <div data-role="collapsible" data-collapsed="false">
+            <h3>Section 1</h3>
+            <p>I'm the collapsible content for section 1</p>
+        </div>
+
+        <p>
+            <a href="#collapsible">Collapsible Page</a>
+        </p>
 
 
 
@@ -62,9 +79,37 @@
 
     </div><!-- /content -->
     <div data-role="footer" data-theme="c">
+        <div data-role="navbar">
+            <ul>
+                <li> <a href="#bicycles" data-icon="grid">Bicycles</a>
+                <li> <a href="#map" data-icon="info">Map</a>
+                <li> <a href="" data-icon="search">Search </a>
+            </ul>
+        </div>
         <h4>CS530: Developing User Interfaces &copy; 2017</h4>
     </div><!-- /footer -->
 </div><!-- /page -->
+<div id="collapsible" data-role="page">
+    <div data-role="header">
+        <h1>Collapsible Content</h1>
+    </div>
+    <div data-role="content">
+        <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+            <div data-role="collapsible">
+                <h3>Section 1</h3>
+                <p>I'm the collapsible content for section 1</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Section 2</h3>
+                <p>I'm the collapsible content for section 2</p>
+            </div>
+            <div data-role="collapsible">
+                <h3>Section 3</h3>
+                <p>I'm the collapsible content for section 3</p>
+            </div>
+        </div> <!-- collapsible-set -->
+    </div>
+</div>
 <div id="stores" data-role="page">
     <div data-role="header">
         <h1>Bike Stores</h1>
@@ -133,7 +178,60 @@
         <h4>CS530: Developing User Interfaces &copy; 2017</h4>
     </div><!-- /footer -->
 </div><!-- /page -->
+<div id="bicycles" data-role="page">
+    <div data-role="header">
+        <h1>Bicycles</h1>
+        <a data-icon="back" data-rel= "back" back-btn="true">Back</a>
+        <a data-icon="home" href="#welcome">Home</a>
 
+    </div><!-- /header -->
+    <div data-role="content">
+        <ul data-role="listview">
+            <li data-role="list-divider">Road</li>
+            <li>
+                <a href="#bike1" class="ui-link-inherit">
+                    <img src="bicycle5.jpg">
+                    <h3 class="ui-li-heading">Status</h3>
+                    <p class="ui-li-desc">Status description</p>
+                    <span class=“ui-li-count”>6</span>
 
+                </a>
+            </li>
+            <li>
+                <a href="#bike1" class="ui-link-inherit">
+                    <img src="bicycle5.jpg">
+                    <h3 class="ui-li-heading">Status</h3>
+                    <p class="ui-li-desc">Status description</p>
+                    <span class=“ui-li-count”>6</span>
+                </a>
+
+            </li>
+            <li data-role="list-divider">Mountain</li>
+            <li>
+                <a href="#bike1" class="ui-link-inherit">
+                    <img src="bicycle5.jpg " >
+                    <h3 class="ui-li-heading">Status</h3>
+                    <p class="ui-li-desc">Status description</p>
+                    <span class=“ui-li-count”>6</span>
+
+                </a>
+
+            </li>
+            <li>
+                <a href="#bike1" class="ui-link-inherit">
+                    <img src="bicycle5.jpg " >
+                    <h3 class="ui-li-heading">Status</h3>
+                    <p class="ui-li-desc">Status description</p>
+                    <span class=“ui-li-count”>6</span>
+
+                </a>
+
+            </li>
+        </ul>
+    </div><!-- /content -->
+    <div data-role="footer">
+        <h4>CS530: Developing User Interfaces &copy; 2017</h4>
+    </div><!-- /footer -->
+</div>
 </body>
 </html>
